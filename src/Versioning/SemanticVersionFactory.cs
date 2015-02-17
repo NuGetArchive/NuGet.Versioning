@@ -43,6 +43,12 @@ namespace NuGet.Versioning
                     // validate the version string
                     string[] parts = sections.Item1.Split('.');
 
+                    // 2 parts names are still supported.
+                    if (parts.Length == 2)
+                    {
+                        parts = new string[] { parts[0], parts[1], "0" };
+                    }
+
                     if (parts.Length != 3)
                     {
                         // versions must be 3 parts

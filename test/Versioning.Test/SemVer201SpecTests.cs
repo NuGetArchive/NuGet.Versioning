@@ -14,10 +14,9 @@ namespace NuGet.Test
     /// </summary>
     public class SemVer201SpecTests
     {
-        // A normal version number MUST take the form X.Y.Z
+        // A normal version number MUST take the form X.Y.Z or X.Y
         [Theory]
         [InlineData("1", false)]
-        [InlineData("1.2", false)]
         [InlineData("1.2.3", true)]
         [InlineData("10.2.3", true)]
         [InlineData("13234.223.32222", true)]
@@ -27,7 +26,7 @@ namespace NuGet.Test
         [InlineData("X.2.3", false)]
         [InlineData("1.2.Z", false)]
         [InlineData("X.Y.Z", false)]
-        public void SemVerVersionMustBe3Parts(string version, bool expected)
+        public void SemVerVersionMustBe3PartsOr2Parts(string version, bool expected)
         {
             // Arrange & act
             SemanticVersion semVer = null;
