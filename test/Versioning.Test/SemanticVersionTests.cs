@@ -77,7 +77,9 @@ namespace NuGet.Test
         }
 
         [Theory]
-        [InlineData("1.3.4.5")]        
+        [InlineData("2.7")]
+        [InlineData("1.3.4.5")]
+        [InlineData("1.3-alpha")]
         [InlineData("1.3 .4")]
         [InlineData("2.3.18.2-a")]
         [InlineData("1.2.3-A..B")]
@@ -99,20 +101,6 @@ namespace NuGet.Test
             // Assert
             Assert.False(result);
             Assert.Null(semanticVersion);
-        }
-
-        [Theory]
-        [InlineData("1.2", "1.2.0")]
-        [InlineData("1.2-alpha", "1.2.0-alpha")]
-        public void TwoPartsNamesAreSupported(string versionToParse, string expected)
-        {
-            // Act
-            SemanticVersion semanticVersion;
-            bool result = SemanticVersion.TryParse(versionToParse, out semanticVersion);
-
-            // Assert
-            Assert.True(result);
-            Assert.Equal(expected, semanticVersion.ToNormalizedString());
         }
     }
 }
