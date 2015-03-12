@@ -1,5 +1,7 @@
 # NuGet.Versioning
 
+[![nuget-volatile MyGet Build Status](https://www.myget.org/BuildSource/Badge/nuget-volatile?identifier=637d829e-a852-493a-819b-5cbdd586bd1b)](https://www.myget.org/)
+
 This repo contains NuGet's implementation of package versioning.
 
 ## Documentation and Further Learning
