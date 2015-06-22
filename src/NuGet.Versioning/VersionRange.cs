@@ -15,6 +15,14 @@ namespace NuGet.Versioning
         private readonly string _originalString;
 
         /// <summary>
+        /// Creates default range
+        /// </summary>
+        public VersionRange(): this(null)
+        {
+
+        }
+
+        /// <summary>
         /// Creates a range that is greater than or equal to the minVersion.
         /// </summary>
         /// <param name="minVersion">Lower bound of the version range.</param>
